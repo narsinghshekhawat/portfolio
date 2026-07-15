@@ -498,11 +498,19 @@ I create modern, responsive and attractive websites with clean code and premium 
 
         </div>
 
-      <form id="contact-form" class="contact-form" data-aos="fade-left">
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form" data-aos="fade-left">
 
-    <input type="text" name="from_name" placeholder="Your Name" required>
+    <input type="hidden" name="form-name" value="contact">
 
-    <input type="email" name="from_email" placeholder="Your Email" required>
+    <p hidden>
+        <label>Don't fill this out:
+            <input name="bot-field">
+        </label>
+    </p>
+
+    <input type="text" name="name" placeholder="Your Name" required>
+
+    <input type="email" name="email" placeholder="Your Email" required>
 
     <input type="text" name="subject" placeholder="Subject" required>
 
@@ -511,7 +519,6 @@ I create modern, responsive and attractive websites with clean code and premium 
     <button type="submit" class="btn">Send Message</button>
 
 </form>
-
     </div>
 
 </section>
